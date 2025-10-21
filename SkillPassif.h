@@ -2,20 +2,15 @@
 #include "Skill.h"
 class SkillPassif : public Skill
 {
-protected:
+public :
+	int Buffs{ 0 };
+	int Nerfs{ 0 };
 
-	//double AttackStat 
-
-
-	double BuffPassive() {
-
+	ActivatePassSkill(int Buff,int Nerf) 
+	{
+		Buffs = Buff;
+		Nerfs = Nerf;
 	}
-
-	double NerfPassive() {
-
-	}
-
-	
 };
 
 

@@ -5,8 +5,8 @@
 #include "Skill.h"
 #include "ShieldBash.h"
 
-std::vector<Skill> availableSkills{}; //faut mettre les skills ici
-std::vector<Skill> currentSkills{};
+std::vector<Skill*> availableSkills{new ShieldBash() }; //faut mettre les skills ici
+std::vector<Skill*> currentSkills{};
 
 int toDoChoice;
 std::string skillChoice;
@@ -45,6 +45,18 @@ bool CheckIfChoiceIsValide(std::vector<Skill> skillList) {
     return false;
 }
 
+void ChoiceNonValide() {
+    std::cout << "Choice non valide" << std::endl;
+    PrintAvailableSkills();
+    AskPlayerChoice();
+}
+
+void UseAllCurrentSkills() {
+    for (Skill skill : currentSkills) {
+        skill.Activate();
+    }
+}
+
 void PlayerChoice(int whatToDo) {
     if (whatToDo > 2) {
         std::cout << "Error." << std::endl;
@@ -52,26 +64,22 @@ void PlayerChoice(int whatToDo) {
     }
     else if (whatToDo == 0) {
         PrintAvailableSkills();
-        AskWhatToDo();
+        std::cout << "Add a skill" << std::endl;
         AskPlayerChoice();
         if (!CheckIfChoiceIsValide(availableSkills)) {
-            std::cout << "Choice non valide" << std::endl;
-            PrintAvailableSkills();
-            AskPlayerChoice();
+            ChoiceNonValide();
         }
     }
     else if (whatToDo == 1) {
         PrintCurrentSkills();
-        AskWhatToDo();
+        std::cout << "Remove a skill" << std::endl;
         AskPlayerChoice();
         if (!CheckIfChoiceIsValide(currentSkills)) {
-            std::cout << "Choice non valide" << std::endl;
-            PrintAvailableSkills();
-            AskPlayerChoice();
+            ChoiceNonValide();
         }
     }
     else {
-        //Appel de fonction pour utiliser tous les skills équiper
+        UseAllCurrentSkills();
     }
 }
 
