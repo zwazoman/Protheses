@@ -8,5 +8,9 @@ public :
 
 public :
 	virtual void Activate() = 0;
+
+protected :
+	void PositionDuJoueur() {};
+	void DistanceDeBash() {};
 };
 
