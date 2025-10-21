@@ -7,10 +7,11 @@ public :
 	std::string name;
 
 public :
-	virtual void Activate() = 0;
+	virtual void Activate();
 
 protected :
 	void PositionDuJoueur() {};
 	void DistanceDeBash() {};
+	void ForceDuGrappin() {};
 };
 

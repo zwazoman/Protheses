@@ -7,3 +7,7 @@ void Skill::PositionDuJoueur() {
 void Skill::DistanceDeBash() {
 	std::cout << "le Bash fait avancer de 3 mètres\n";
 }
+
+void Skill::ForceDuGrappin() {
+	std::cout << "Le Grappin tire vers la gauche\n";
+}
