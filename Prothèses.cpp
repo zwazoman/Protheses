@@ -4,8 +4,10 @@
 #include <string>
 #include "Skill.h"
 #include "ShieldBash.h"
+#include "Grapplin.h"
+#include "Dash.h"
 
-std::vector<Skill*> availableSkills{new ShieldBash() }; //faut mettre les skills ici
+std::vector<Skill*> availableSkills{new ShieldBash::Skill("ShieldBase"), new Grapplin::Skill("Grapplin"), new Dash::Skill("Dash") }; //faut mettre les skills ici
 std::vector<Skill*> currentSkills{};
 
 int toDoChoice;
