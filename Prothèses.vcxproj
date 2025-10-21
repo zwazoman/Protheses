@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="ActiveSkill.cpp" />
     <ClCompile Include="Grapplin.cpp" />
+    <ClCompile Include="Dash.cpp" />
     <ClCompile Include="Prothèses.cpp" />
     <ClCompile Include="ShieldBash.cpp" />
     <ClCompile Include="Skill.cpp" />
@@ -136,6 +137,7 @@
   <ItemGroup>
     <ClInclude Include="ActiveSkill.h" />
     <ClInclude Include="Grapplin.h" />
+    <ClInclude Include="Dash.h" />
     <ClInclude Include="ShieldBash.h" />
     <ClInclude Include="Skill.h" />
   </ItemGroup>
