@@ -61,7 +61,7 @@ void PlayerChoice(int whatToDo) {
         }
     }
     else if (whatToDo == 1) {
-        PrintAvailableSkills();
+        PrintCurrentSkills();
         AskWhatToDo();
         AskPlayerChoice();
         if (!CheckIfChoiceIsValide(currentSkills)) {
