@@ -24,27 +24,27 @@ int AskWhatToDo() {
 
 void PrintAvailableSkills() {
     std::cout << "List of available skills" << std::endl << std::endl;
-    for (Skill skill : availableSkills) {
-        std::cout << skill.name << std::endl;
+    for (Skill* skill : availableSkills) {
+        std::cout << skill->name << std::endl;
     }
 }
 
 void PrintCurrentSkills(){
     std::cout << "List of your current skills" << std::endl << std::endl;
-    for (Skill skill : currentSkills) {
-        std::cout << skill.name << std::endl;
+    for (Skill* skill : currentSkills) {
+        std::cout << skill->name << std::endl;
     }
 }
 
 void AskPlayerChoice() {
     std::getline(std::cin, skillChoice);
 }
-bool CheckIfChoiceIsValide(std::vector<Skill> skillList) {
-    auto it = std::find(skillList.begin(), skillList.end(), skillChoice);
-    if (it != skillList.end()) {
-        return true;
-    }
-    return false;
+bool CheckIfChoiceIsValide(std::vector<Skill*> skillList) {
+    //auto it = std::find(skillList.begin(), skillList.end(), skillChoice);
+    //if (it != skillList.end()) {
+    //    return true;
+    //}
+    return true;
 }
 
 void ChoiceNonValide() {
@@ -54,8 +54,9 @@ void ChoiceNonValide() {
 }
 
 void UseAllCurrentSkills() {
-    for (Skill skill : currentSkills) {
-        skill.Activate();
+    if (currentSkills.empty()) std::cout << "No skills to use" << std::endl;
+    for (Skill* skill : currentSkills) {
+        skill->Activate();
     }
 }
 
@@ -66,18 +67,21 @@ void PlayerChoice(int whatToDo) {
     }
     else if (whatToDo == 0) {
         PrintAvailableSkills();
-        std::cout << "Add a skill" << std::endl;
+        std::cout << "Add a skill // ATTENTION EXPLOSION" << std::endl;
         AskPlayerChoice();
-        if (!CheckIfChoiceIsValide(availableSkills)) {
-            ChoiceNonValide();
-        }
+        //if (!CheckIfChoiceIsValide(availableSkills)) {
+        //    ChoiceNonValide();
+        //}
     }
     else if (whatToDo == 1) {
-        PrintCurrentSkills();
-        std::cout << "Remove a skill" << std::endl;
-        AskPlayerChoice();
-        if (!CheckIfChoiceIsValide(currentSkills)) {
-            ChoiceNonValide();
+        if (currentSkills.empty()) std::cout << "No skills to remove" << std::endl;
+        else {
+            PrintCurrentSkills();
+            std::cout << "Remove a skill" << std::endl;
+            AskPlayerChoice();
+            //if (!CheckIfChoiceIsValide(currentSkills)) {
+            //    ChoiceNonValide();
+            //}
         }
     }
     else {
