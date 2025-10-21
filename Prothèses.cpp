@@ -5,7 +5,7 @@
 #include "Skill.h"
 #include "ShieldBash.h"
 
-std::vector<Skill> availableSkills{new ShieldBash*}; //faut mettre les skills ici
+std::vector<Skill> availableSkills{}; //faut mettre les skills ici
 std::vector<Skill> currentSkills{};
 
 int toDoChoice;
@@ -34,8 +34,6 @@ void PrintCurrentSkills(){
     }
 }
 
-
-
 void AskPlayerChoice() {
     std::getline(std::cin, skillChoice);
 }
@@ -47,9 +45,12 @@ bool CheckIfChoiceIsValide(std::vector<Skill> skillList) {
     return false;
 }
 
-int main()
-{
-    while (true) {
+void PlayerChoice(int whatToDo) {
+    if (whatToDo > 2) {
+        std::cout << "Error." << std::endl;
+        PlayerChoice(AskWhatToDo());
+    }
+    else if (whatToDo == 0) {
         PrintAvailableSkills();
         AskWhatToDo();
         AskPlayerChoice();
@@ -58,5 +59,25 @@ int main()
             PrintAvailableSkills();
             AskPlayerChoice();
         }
+    }
+    else if (whatToDo == 1) {
+        PrintAvailableSkills();
+        AskWhatToDo();
+        AskPlayerChoice();
+        if (!CheckIfChoiceIsValide(currentSkills)) {
+            std::cout << "Choice non valide" << std::endl;
+            PrintAvailableSkills();
+            AskPlayerChoice();
+        }
+    }
+    else {
+        //Appel de fonction pour utiliser tous les skills équiper
+    }
+}
+
+int main()
+{
+    while (true) {
+        PlayerChoice(AskWhatToDo());
     }
 }
