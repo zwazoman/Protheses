@@ -1,4 +1,5 @@
 #include "Dash.h"
+#include "Skill.h"
 
 void Skill::Activate()
 {

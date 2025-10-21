@@ -13,5 +13,10 @@ protected :
 	void PositionDuJoueur() {};
 	void DistanceDeBash() {};
 	void ForceDuGrappin() {};
+public:
+	Skill(const std::string& name)
+		: name(name)
+	{
+	}
 };
 

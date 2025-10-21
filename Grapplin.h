@@ -3,6 +3,6 @@
 class Grapplin :
     public ActiveSkill
 {
-    void Skill::Activate() override;
+    void Activate() override;
 };
 
