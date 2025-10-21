@@ -10,9 +10,9 @@ public :
 	virtual void Activate();
 
 protected :
-	void PositionDuJoueur() {};
-	void DistanceDeBash() {};
-	void ForceDuGrappin() {};
+	void PositionDuJoueur();
+	void DistanceDeBash();
+	void ForceDuGrappin();
 public:
 	Skill(const std::string& name)
 		: name(name)
