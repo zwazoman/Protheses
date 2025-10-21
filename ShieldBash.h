@@ -3,5 +3,7 @@
 class ShieldBash :
     public ActiveSkill
 {
+public:
+    void Skill::Activate() override;
 };
 
