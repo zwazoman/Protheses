@@ -1,8 +1,20 @@
 
 #include <iostream>
 #include <vector>
+#include "Skill.h"
 
-std::vector<std::string> availableSkills{};
+std::vector<Skill> availableSkills{};
+std::vector<Skill> currentSkills{};
+
+void PrintAvailableSkills() {
+    for (Skill skill : availableSkills) {
+        std::cout << skill << std::endl;
+    }
+}
+
+
+
+
 
 int main()
 {
