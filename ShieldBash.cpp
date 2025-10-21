@@ -1,7 +1,7 @@
 #include "ShieldBash.h"
 
-void ActiveSkill::Activate() {
-	Skill::PositionDuJoueur();
+void Skill::Activate() {
+	PositionDuJoueur();
 	std::cout << "le bash va jusqu'a : ";
-	Skill::DistanceDeBash();
+	DistanceDeBash();
 }

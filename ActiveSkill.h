@@ -7,7 +7,6 @@ class ActiveSkill :
 {
 public:
     std::string name;
-    void virtual Activate();
 
     ActiveSkill(std::string theName) 
     {
