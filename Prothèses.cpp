@@ -17,7 +17,7 @@ int AskWhatToDo() {
     std::cout << "What do you want to do" << std::endl << std::endl;
     std::cout << "0 - Equip a skill" << std::endl;
     std::cout << "1 - Undo skill" << std::endl;
-    std::cout << "2 - Use current skill" << std::endl;
+    std::cout << "2 - Use currents skills" << std::endl;
     std::cin >> toDoChoice;
     return toDoChoice;
 }
