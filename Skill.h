@@ -7,6 +7,10 @@ public :
 	std::string name;
 
 public :
-	virtual void Activate(); //=0
+	virtual void Activate() = 0;
+
+protected :
+	void PositionDuJoueur() {};
+	void DistanceDeBash() {};
 };
 
